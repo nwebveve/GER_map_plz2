@@ -92,3 +92,30 @@ Hinweis:
 - Die Karte funktioniert sowohl aus `dist/` als auch direkt aus dem Repo-Root.
 - Bei Direktnutzung aus dem Repo werden Daten aus `public/` geladen.
 - Es sind keine externen Downloads notwendig (nur Windows PowerShell, bereits im System enthalten).
+
+## GitHub Pages Hosting (empfohlen)
+
+Dieses Repo ist für automatisches Deployment auf GitHub Pages vorbereitet.
+
+### Einmalig einrichten
+
+1. In GitHub ins Repo gehen: `Settings -> Pages`
+2. Unter `Build and deployment` als Source **GitHub Actions** wählen
+3. Auf `main` pushen (oder Workflow manuell starten)
+
+Danach wird die Seite automatisch veröffentlicht.
+
+Typische URL:
+
+`https://nwebveve.github.io/GER_map_plz2/map.html`
+
+### iFrame für Intranet/Website
+
+```html
+<iframe
+  src="https://nwebveve.github.io/GER_map_plz2/map.html"
+  title="Interaktive Deutschlandkarte PLZ-2"
+  style="width:100%;max-width:1000px;height:640px;border:0;border-radius:12px"
+  loading="lazy"
+></iframe>
+```
