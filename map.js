@@ -621,10 +621,28 @@ function drawRegions(regions) {
   }
 }
 
+async function fetchFirstAvailable(paths) {
+  let lastError = null;
+
+  for (const path of paths) {
+    try {
+      const response = await fetch(path);
+      if (response.ok) return response;
+      lastError = new Error(`HTTP ${response.status} for ${path}`);
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError ?? new Error("Keine gueltige Datenquelle gefunden");
+}
+
 async function loadContactDirectory() {
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}plz_contacts.json`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const response = await fetchFirstAvailable([
+      `${import.meta.env.BASE_URL}plz_contacts.json`,
+      `${import.meta.env.BASE_URL}public/plz_contacts.json`
+    ]);
 
     const payload = await response.json();
     if (Array.isArray(payload?.contacts)) {
@@ -638,14 +656,16 @@ async function loadContactDirectory() {
     contactDirectory = new Map();
   }
 }
+
 async function init() {
   try {
     const [geoResponse] = await Promise.all([
-      fetch(`${import.meta.env.BASE_URL}gemeinden_simplify200.geojson`),
+      fetchFirstAvailable([
+        `${import.meta.env.BASE_URL}gemeinden_simplify200.geojson`,
+        `${import.meta.env.BASE_URL}public/gemeinden_simplify200.geojson`
+      ]),
       loadContactDirectory()
     ]);
-
-    if (!geoResponse.ok) throw new Error(`HTTP ${geoResponse.status}`);
 
     const geoJson = await geoResponse.json();
     drawRegions(aggregatePlzRegions(geoJson.features ?? []));
