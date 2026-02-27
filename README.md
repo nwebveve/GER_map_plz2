@@ -85,10 +85,10 @@ Hinweis: Der Host muss iFrame-Einbettung erlauben (`X-Frame-Options`/`CSP frame-
 Wenn jemand nur anschauen will (ohne `npm`/Node):
 
 1. Repo von GitHub herunterladen/klonen
-2. `caddy.exe` in den Repo-Ordner legen
-3. `serve-map-windows.bat` starten
-4. Im Browser oeffnen: `http://localhost:8080/map.html`
+2. `serve-map-windows.bat` starten
+3. Im Browser oeffnen: `http://localhost:8080/map.html`
 
 Hinweis:
 - Die Karte funktioniert sowohl aus `dist/` als auch direkt aus dem Repo-Root.
 - Bei Direktnutzung aus dem Repo werden Daten aus `public/` geladen.
+- Es sind keine externen Downloads notwendig (nur Windows PowerShell, bereits im System enthalten).
