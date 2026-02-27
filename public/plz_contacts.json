@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "generated_at": "2026-02-27T02:56:09.246Z",
+  "source": "data/plz_contacts.csv",
+  "contact_roles": [
+    "KAMHEAVY",
+    "KAMLIGHT",
+    "VAD"
+  ],
+  "contacts": [
+    {
+      "rule_type": "exact",
+      "plz2_exact": "10",
+      "plz2_from": null,
+      "plz2_to": null,
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Berlin",
+      "tel": "+49 30 9999 1003",
+      "mail": "kamheavy.berlin@firma.de"
+    },
+    {
+      "rule_type": "exact",
+      "plz2_exact": "10",
+      "plz2_from": null,
+      "plz2_to": null,
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Berlin",
+      "tel": "+49 30 9999 1002",
+      "mail": "kamlight.berlin@firma.de"
+    },
+    {
+      "rule_type": "exact",
+      "plz2_exact": "10",
+      "plz2_from": null,
+      "plz2_to": null,
+      "role": "VAD",
+      "name": "VAD Berlin",
+      "tel": "+49 30 9999 1001",
+      "mail": "vad.berlin@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 0,
+      "plz2_to": 19,
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Nord",
+      "tel": "+49 40 1000 1113",
+      "mail": "kamheavy.nord@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 0,
+      "plz2_to": 19,
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Nord",
+      "tel": "+49 40 1000 1112",
+      "mail": "kamlight.nord@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 0,
+      "plz2_to": 19,
+      "role": "VAD",
+      "name": "VAD Nord",
+      "tel": "+49 40 1000 1111",
+      "mail": "vad.nord@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 20,
+      "plz2_to": 39,
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Mitte",
+      "tel": "+49 69 2000 2113",
+      "mail": "kamheavy.mitte@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 20,
+      "plz2_to": 39,
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Mitte",
+      "tel": "+49 69 2000 2112",
+      "mail": "kamlight.mitte@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 20,
+      "plz2_to": 39,
+      "role": "VAD",
+      "name": "VAD Mitte",
+      "tel": "+49 69 2000 2111",
+      "mail": "vad.mitte@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 40,
+      "plz2_to": 59,
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY West",
+      "tel": "+49 211 3000 3113",
+      "mail": "kamheavy.west@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 40,
+      "plz2_to": 59,
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT West",
+      "tel": "+49 211 3000 3112",
+      "mail": "kamlight.west@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 40,
+      "plz2_to": 59,
+      "role": "VAD",
+      "name": "VAD West",
+      "tel": "+49 211 3000 3111",
+      "mail": "vad.west@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 60,
+      "plz2_to": 79,
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Südwest",
+      "tel": "+49 711 4000 4113",
+      "mail": "kamheavy.suedwest@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 60,
+      "plz2_to": 79,
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Südwest",
+      "tel": "+49 711 4000 4112",
+      "mail": "kamlight.suedwest@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 60,
+      "plz2_to": 79,
+      "role": "VAD",
+      "name": "VAD Südwest",
+      "tel": "+49 711 4000 4111",
+      "mail": "vad.suedwest@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 80,
+      "plz2_to": 99,
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Süd",
+      "tel": "+49 89 5000 5113",
+      "mail": "kamheavy.sued@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 80,
+      "plz2_to": 99,
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Süd",
+      "tel": "+49 89 5000 5112",
+      "mail": "kamlight.sued@firma.de"
+    },
+    {
+      "rule_type": "range",
+      "plz2_exact": null,
+      "plz2_from": 80,
+      "plz2_to": 99,
+      "role": "VAD",
+      "name": "VAD Süd",
+      "tel": "+49 89 5000 5111",
+      "mail": "vad.sued@firma.de"
+    },
+    {
+      "rule_type": "default",
+      "plz2_exact": null,
+      "plz2_from": null,
+      "plz2_to": null,
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Zentrale",
+      "tel": "+49 30 5555 0003",
+      "mail": "kamheavy@firma.de"
+    },
+    {
+      "rule_type": "default",
+      "plz2_exact": null,
+      "plz2_from": null,
+      "plz2_to": null,
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Zentrale",
+      "tel": "+49 30 5555 0002",
+      "mail": "kamlight@firma.de"
+    },
+    {
+      "rule_type": "default",
+      "plz2_exact": null,
+      "plz2_from": null,
+      "plz2_to": null,
+      "role": "VAD",
+      "name": "VAD Zentrale",
+      "tel": "+49 30 5555 0001",
+      "mail": "vad@firma.de"
+    }
+  ]
+}

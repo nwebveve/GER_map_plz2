@@ -1,0 +1,15 @@
+{
+  "name": "em-mapplz",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build:contacts": "node scripts/build-contacts.mjs",
+    "dev": "npm run build:contacts && vite",
+    "build": "npm run build:contacts && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  }
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interaktive Deutschlandkarte PLZ-2</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="map-page">
+    <main class="map-layout">
+      <section class="map-card">
+        <header class="map-head">
+          <h1>Deutschlandkarte nach PLZ-2</h1>
+          <p>Klicke auf ein PLZ-2 Gebiet, um Kontaktdaten als Popup zu sehen.</p>
+        </header>
+        <div class="svg-wrap">
+          <svg id="plzMap" viewBox="0 0 860 900" role="img" aria-label="Interaktive Deutschlandkarte mit PLZ-2 Regionen">
+            <g id="regions"></g>
+            <g id="labels"></g>
+          </svg>
+
+          <section class="info-popup" id="infoPopup" aria-live="polite" hidden>
+            <button type="button" class="popup-close" id="closePopup" aria-label="Popup schließen">×</button>
+            <h2>PLZ-Gebiet <span id="selectedPlz">--</span></h2>
+            <p id="regionHint"></p>
+            <div id="serviceList" class="service-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./map.js"></script>
+  </body>
+</html>

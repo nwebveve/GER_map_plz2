@@ -1,0 +1,34 @@
+# rule_type,plz2_exact,plz2_from,plz2_to,role,name,tel,mail
+# rule_type: exact | range | default
+rule_type,plz2_exact,plz2_from,plz2_to,role,name,tel,mail
+
+# Fallback (wenn keine spezifischere Regel greift)
+default,,,,VAD,VAD Zentrale,+49 30 5555 0001,vad@firma.de
+default,,,,KAMLIGHT,KAMLIGHT Zentrale,+49 30 5555 0002,kamlight@firma.de
+default,,,,KAMHEAVY,KAMHEAVY Zentrale,+49 30 5555 0003,kamheavy@firma.de
+
+# Bereichsregeln (bevorzugt gegenüber default)
+range,,00,19,VAD,VAD Nord,+49 40 1000 1111,vad.nord@firma.de
+range,,00,19,KAMLIGHT,KAMLIGHT Nord,+49 40 1000 1112,kamlight.nord@firma.de
+range,,00,19,KAMHEAVY,KAMHEAVY Nord,+49 40 1000 1113,kamheavy.nord@firma.de
+
+range,,20,39,VAD,VAD Mitte,+49 69 2000 2111,vad.mitte@firma.de
+range,,20,39,KAMLIGHT,KAMLIGHT Mitte,+49 69 2000 2112,kamlight.mitte@firma.de
+range,,20,39,KAMHEAVY,KAMHEAVY Mitte,+49 69 2000 2113,kamheavy.mitte@firma.de
+
+range,,40,59,VAD,VAD West,+49 211 3000 3111,vad.west@firma.de
+range,,40,59,KAMLIGHT,KAMLIGHT West,+49 211 3000 3112,kamlight.west@firma.de
+range,,40,59,KAMHEAVY,KAMHEAVY West,+49 211 3000 3113,kamheavy.west@firma.de
+
+range,,60,79,VAD,VAD Südwest,+49 711 4000 4111,vad.suedwest@firma.de
+range,,60,79,KAMLIGHT,KAMLIGHT Südwest,+49 711 4000 4112,kamlight.suedwest@firma.de
+range,,60,79,KAMHEAVY,KAMHEAVY Südwest,+49 711 4000 4113,kamheavy.suedwest@firma.de
+
+range,,80,99,VAD,VAD Süd,+49 89 5000 5111,vad.sued@firma.de
+range,,80,99,KAMLIGHT,KAMLIGHT Süd,+49 89 5000 5112,kamlight.sued@firma.de
+range,,80,99,KAMHEAVY,KAMHEAVY Süd,+49 89 5000 5113,kamheavy.sued@firma.de
+
+# Einzelne PLZ-2 Ausnahmen (höchste Priorität)
+exact,10,,,VAD,VAD Berlin,+49 30 9999 1001,vad.berlin@firma.de
+exact,10,,,KAMLIGHT,KAMLIGHT Berlin,+49 30 9999 1002,kamlight.berlin@firma.de
+exact,10,,,KAMHEAVY,KAMHEAVY Berlin,+49 30 9999 1003,kamheavy.berlin@firma.de

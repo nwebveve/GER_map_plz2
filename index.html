@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deutschlandkarte PLZ-2 iFrame Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="demo-page">
+    <main class="demo-wrap">
+      <section>
+        <h1>iFrame-Entwurf: Interaktive Deutschlandkarte (PLZ-2)</h1>
+        <p>Kompakter Entwurf für Intranet-Einbindung mit klickbaren PLZ-2 Regionen und Popup-Info.</p>
+      </section>
+
+      <section class="frame-block">
+        <iframe
+          title="Interaktive Deutschlandkarte nach PLZ-2"
+          src="./map.html"
+          loading="lazy"
+          class="map-iframe"
+        ></iframe>
+      </section>
+
+      <section class="code-block">
+        <h2>Einbettungscode</h2>
+        <pre><code>&lt;iframe
+  src="https://deine-domain.de/map.html"
+  title="Interaktive Deutschlandkarte PLZ-2"
+  style="width: 100%; max-width: 1000px; height: 640px; border: 0; border-radius: 12px;"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+      </section>
+    </main>
+  </body>
+</html>
