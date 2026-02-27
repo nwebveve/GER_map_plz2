@@ -2,120 +2,75 @@
 
 Interaktive Deutschlandkarte mit PLZ-2-Gebieten (erste zwei Ziffern) inkl. klickbarem Kontakt-Popup für `VAD`, `KAMLIGHT`, `KAMHEAVY`.
 
-## Datenpflege: vollständige Liste pro PLZ-2
+## Datenschutz / Betriebsmodell
 
-Kontakte werden **nicht** im Frontend-Code gepflegt, sondern in:
+Dieses Projekt ist auf **Self-Hosting** ausgelegt.
+
+- Keine automatische Veröffentlichung über GitHub Pages
+- Keine sensiblen Kontaktdaten in fremden/geoeffentlichten Hosts nötig
+- Jeder Betreiber hostet die Karte im eigenen Intranet / eigenen Webserver
+
+## Datenpflege pro PLZ-2 (vollstaendige Liste)
+
+Kontakte werden in der CSV gepflegt:
 
 - [data/plz_contacts.csv](data/plz_contacts.csv)
 
-Die CSV enthält die **komplette Liste** `00` bis `99` und pro PLZ-2 jeweils drei Einträge:
-
-- `VAD`
-- `KAMLIGHT`
-- `KAMHEAVY`
-
-Damit hat jede PLZ-2 eigene Eingabefelder (`name`, `tel`, `mail`).
-
-## CSV-Format
-
-Header:
+Format:
 
 `plz2,role,name,tel,mail`
 
-Beispiel:
+- `plz2`: `00` bis `99`
+- `role`: `VAD`, `KAMLIGHT`, `KAMHEAVY`
+- pro PLZ-2 und Rolle genau ein Datensatz
 
-```csv
-plz2,role,name,tel,mail
-00,VAD,VAD Team PLZ 00,+49 30 10000 100,vad.plz00@firma.de
-00,KAMLIGHT,KAMLIGHT Team PLZ 00,+49 30 10001 101,kamlight.plz00@firma.de
-00,KAMHEAVY,KAMHEAVY Team PLZ 00,+49 30 10002 102,kamheavy.plz00@firma.de
-```
+## Ohne Node.js nutzbar
 
-## Build-Pipeline
+Die Karte kann direkt aus dem Repo gestartet werden (Windows-Bordmittel):
 
-1. CSV pflegen (`data/plz_contacts.csv`)
-2. JSON generieren (`public/plz_contacts.json`)
-3. Karte lädt JSON automatisch
+1. Repo herunterladen/klonen
+2. `serve-map-windows.bat` starten
+3. Browser: `http://localhost:8080/map.html`
 
-Skripte:
+Hinweis:
+- Keine externen Downloads erforderlich
+- Die Karte lädt Kontakte zuerst aus JSON und faellt dann auf CSV zurück:
+  - `plz_contacts.json` / `public/plz_contacts.json`
+  - `data/plz_contacts.csv` / `public/plz_contacts.csv`
 
-- `npm run build:contacts` -> validiert CSV und erzeugt JSON
-- `npm run dev` -> erzeugt JSON und startet Dev-Server
-- `npm run build` -> erzeugt JSON und baut Dist
-
-## Validierungen im Build-Skript
-
-Das Skript [scripts/build-contacts.mjs](scripts/build-contacts.mjs) prüft:
-
-- korrekten Header
-- `plz2` zweistellig (`00-99`)
-- `role` nur `VAD`, `KAMLIGHT`, `KAMHEAVY`
-- `name`, `tel`, `mail` vorhanden
-- keine doppelten Kombinationen `plz2+role`
-- Vollständigkeit: alle `100 x 3 = 300` Kombinationen vorhanden
-
-## Entwicklung
+## Mit Node.js (optional, für Build/Validierung)
 
 ```bash
 npm install
-npm run dev
+npm run build
 ```
 
-## Deployment / iFrame
+Skripte:
 
+- `npm run build:contacts`: validiert CSV und erzeugt `public/plz_contacts.json`
+- `npm run dev`: erzeugt JSON und startet Vite
+- `npm run build`: erzeugt JSON und erstellt `dist/`
+
+## Deployment im Intranet
+
+### Variante A: Direkt aus Repo (ohne Build)
+- Dateien auf internen Webserver legen (oder lokal per `serve-map-windows.bat`)
+- iFrame auf `map.html`
+
+### Variante B: Mit Build (`dist/`)
 1. `npm run build`
-2. `dist/` deployen (enthaelt `index.html` und `map.html`)
-3. `map.html` als iFrame einbinden
+2. Inhalt von `dist/` auf internen Webserver deployen
+3. iFrame auf `map.html`
 
-Beispiel:
+## iFrame-Einbindung
 
 ```html
 <iframe
-  src="https://deine-domain.de/map.html"
+  src="https://dein-intranet-host/plz-map/map.html"
   title="Interaktive Deutschlandkarte PLZ-2"
   style="width:100%;max-width:1000px;height:640px;border:0;border-radius:12px"
   loading="lazy"
 ></iframe>
 ```
 
-Hinweis: Der Host muss iFrame-Einbettung erlauben (`X-Frame-Options`/`CSP frame-ancestors`).
-
-## Nutzung ohne Node.js (Windows)
-
-Wenn jemand nur anschauen will (ohne `npm`/Node):
-
-1. Repo von GitHub herunterladen/klonen
-2. `serve-map-windows.bat` starten
-3. Im Browser oeffnen: `http://localhost:8080/map.html`
-
-Hinweis:
-- Die Karte funktioniert sowohl aus `dist/` als auch direkt aus dem Repo-Root.
-- Bei Direktnutzung aus dem Repo werden Daten aus `public/` geladen.
-- Es sind keine externen Downloads notwendig (nur Windows PowerShell, bereits im System enthalten).
-
-## GitHub Pages Hosting (empfohlen)
-
-Dieses Repo ist für automatisches Deployment auf GitHub Pages vorbereitet.
-
-### Einmalig einrichten
-
-1. In GitHub ins Repo gehen: `Settings -> Pages`
-2. Unter `Build and deployment` als Source **GitHub Actions** wählen
-3. Auf `main` pushen (oder Workflow manuell starten)
-
-Danach wird die Seite automatisch veröffentlicht.
-
-Typische URL:
-
-`https://nwebveve.github.io/GER_map_plz2/map.html`
-
-### iFrame für Intranet/Website
-
-```html
-<iframe
-  src="https://nwebveve.github.io/GER_map_plz2/map.html"
-  title="Interaktive Deutschlandkarte PLZ-2"
-  style="width:100%;max-width:1000px;height:640px;border:0;border-radius:12px"
-  loading="lazy"
-></iframe>
-```
+Hinweis: Host muss iFrame-Einbettung erlauben (`X-Frame-Options`/`CSP frame-ancestors`).

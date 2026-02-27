@@ -637,22 +637,95 @@ async function fetchFirstAvailable(paths) {
   throw lastError ?? new Error("Keine gueltige Datenquelle gefunden");
 }
 
+function parseCsvLine(line) {
+  const values = [];
+  let current = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i += 1) {
+    const ch = line[i];
+
+    if (ch === "\"") {
+      if (inQuotes && line[i + 1] === "\"") {
+        current += "\"";
+        i += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+
+    if (ch === "," && !inQuotes) {
+      values.push(current.trim());
+      current = "";
+      continue;
+    }
+
+    current += ch;
+  }
+
+  values.push(current.trim());
+  return values;
+}
+
+function parseContactsCsv(csvText) {
+  const lines = csvText
+    .replace(/^\uFEFF/, "")
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0 && !line.startsWith("#"));
+
+  if (lines.length < 2) return [];
+
+  const headers = parseCsvLine(lines[0]);
+  const records = [];
+
+  for (let i = 1; i < lines.length; i += 1) {
+    const cells = parseCsvLine(lines[i]);
+    const row = {};
+
+    for (let col = 0; col < headers.length; col += 1) {
+      row[headers[col]] = cells[col] ?? "";
+    }
+
+    records.push(row);
+  }
+
+  return records;
+}
+
 async function loadContactDirectory() {
   try {
-    const response = await fetchFirstAvailable([
+    const jsonResponse = await fetchFirstAvailable([
       `${import.meta.env.BASE_URL}plz_contacts.json`,
       `${import.meta.env.BASE_URL}public/plz_contacts.json`
     ]);
 
-    const payload = await response.json();
+    const payload = await jsonResponse.json();
     if (Array.isArray(payload?.contacts)) {
       contactDirectory = buildContactDirectory(payload.contacts);
       return;
     }
 
     contactDirectory = new Map();
-  } catch (error) {
-    console.warn("Kontaktdaten konnten nicht geladen werden, Fallback wird verwendet.", error);
+  } catch (jsonError) {
+    try {
+      const csvResponse = await fetchFirstAvailable([
+        `${import.meta.env.BASE_URL}data/plz_contacts.csv`,
+        `${import.meta.env.BASE_URL}public/plz_contacts.csv`
+      ]);
+
+      const csvText = await csvResponse.text();
+      const csvRecords = parseContactsCsv(csvText);
+      contactDirectory = buildContactDirectory(csvRecords);
+      if (contactDirectory.size > 0) return;
+    } catch (csvError) {
+      console.warn("Kontaktdaten konnten nicht geladen werden (JSON+CSV).", {
+        jsonError,
+        csvError
+      });
+    }
+
     contactDirectory = new Map();
   }
 }
