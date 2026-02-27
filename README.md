@@ -70,3 +70,27 @@ Wenn ihr viele Änderungen habt:
 2. Als CSV exportieren
 3. `npm run build:contacts` ausführen
 4. Ergebnis in Karte prüfen
+
+## Produktions-Check (Website/Intranet + iFrame)
+
+Das Projekt ist iFrame-fähig, wenn der Hostserver folgende Punkte erfüllt:
+
+1. **iFrame-Header erlauben**
+   - Kein `X-Frame-Options: DENY` oder `SAMEORIGIN` (falls auf anderer Domain eingebettet)
+   - Passende `Content-Security-Policy` mit `frame-ancestors` setzen
+
+2. **Statisches Hosting der Dist-Dateien**
+   - `npm run build`
+   - Inhalt von `dist/` deployen
+
+3. **Pfad-Setup**
+   - Karte kann als `map.html` direkt oder in Unterpfaden gehostet werden
+   - Daten (`gemeinden_simplify200.geojson`, `plz_contacts.json`) werden relativ zu `map.js` geladen
+
+4. **CORS (nur falls Cross-Domain)**
+   - Falls Karte auf Domain A liegt und in Domain B eingebettet wird: Host muss Embedding/CORS entsprechend erlauben
+
+5. **Datenpflege-Workflow**
+   - CSV pflegen: `data/plz_contacts.csv`
+   - JSON erzeugen: `npm run build:contacts`
+   - Danach neu deployen

@@ -636,7 +636,7 @@ function drawRegions(regions) {
 
 async function loadContactRules() {
   try {
-    const response = await fetch("/plz_contacts.json");
+    const response = await fetch(new URL("./plz_contacts.json", import.meta.url));
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const payload = await response.json();
@@ -652,7 +652,7 @@ async function loadContactRules() {
 async function init() {
   try {
     const [geoResponse] = await Promise.all([
-      fetch("/gemeinden_simplify200.geojson"),
+      fetch(new URL("./gemeinden_simplify200.geojson", import.meta.url)),
       loadContactRules()
     ]);
 
