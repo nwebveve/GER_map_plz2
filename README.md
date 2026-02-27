@@ -64,7 +64,7 @@ npm run dev
 ## Deployment / iFrame
 
 1. `npm run build`
-2. `dist/` deployen
+2. `dist/` deployen (enthaelt `index.html` und `map.html`)
 3. `map.html` als iFrame einbinden
 
 Beispiel:

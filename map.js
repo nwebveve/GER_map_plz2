@@ -623,7 +623,7 @@ function drawRegions(regions) {
 
 async function loadContactDirectory() {
   try {
-    const response = await fetch(new URL("./plz_contacts.json", import.meta.url));
+    const response = await fetch(`${import.meta.env.BASE_URL}plz_contacts.json`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const payload = await response.json();
@@ -641,7 +641,7 @@ async function loadContactDirectory() {
 async function init() {
   try {
     const [geoResponse] = await Promise.all([
-      fetch(new URL("./gemeinden_simplify200.geojson", import.meta.url)),
+      fetch(`${import.meta.env.BASE_URL}gemeinden_simplify200.geojson`),
       loadContactDirectory()
     ]);
 
