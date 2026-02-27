@@ -17,7 +17,7 @@ const regionNodes = new Map();
 const labelNodes = new Map();
 let regionsByCode = new Map();
 let activeCode = null;
-let contactRules = [];
+let contactDirectory = new Map();
 
 function parseCoord(value) {
   if (typeof value === "number") return value;
@@ -451,45 +451,33 @@ function getDefaultContact(code, role) {
   };
 }
 
-function resolveContactForRole(code, role) {
-  const normalizedRole = normalizeRole(role);
-  const codeNum = Number.parseInt(code, 10);
+function buildContactDirectory(records) {
+  const directory = new Map();
 
-  const exact = contactRules.find(
-    (rule) =>
-      rule.rule_type === "exact" &&
-      normalizeRole(rule.role) === normalizedRole &&
-      rule.plz2_exact === code
-  );
-  if (exact) return { role: normalizedRole, name: exact.name, tel: exact.tel, mail: exact.mail };
+  for (const raw of records) {
+    const plz2 = String(raw?.plz2 || "").padStart(2, "0");
+    const role = normalizeRole(raw?.role);
+    const name = String(raw?.name || "").trim();
+    const tel = String(raw?.tel || "").trim();
+    const mail = String(raw?.mail || "").trim();
 
-  const rangeMatches = contactRules
-    .filter(
-      (rule) =>
-        rule.rule_type === "range" &&
-        normalizeRole(rule.role) === normalizedRole &&
-        Number.isInteger(rule.plz2_from) &&
-        Number.isInteger(rule.plz2_to) &&
-        codeNum >= rule.plz2_from &&
-        codeNum <= rule.plz2_to
-    )
-    .sort((a, b) => {
-      const spanA = a.plz2_to - a.plz2_from;
-      const spanB = b.plz2_to - b.plz2_from;
-      return spanA - spanB;
-    });
+    if (!/^\d{2}$/.test(plz2) || !role || !name || !tel || !mail) {
+      continue;
+    }
 
-  if (rangeMatches.length > 0) {
-    const winner = rangeMatches[0];
-    return { role: normalizedRole, name: winner.name, tel: winner.tel, mail: winner.mail };
+    if (!directory.has(plz2)) directory.set(plz2, new Map());
+    directory.get(plz2).set(role, { role, name, tel, mail });
   }
 
-  const fallback = contactRules.find(
-    (rule) => rule.rule_type === "default" && normalizeRole(rule.role) === normalizedRole
-  );
+  return directory;
+}
 
-  if (fallback) {
-    return { role: normalizedRole, name: fallback.name, tel: fallback.tel, mail: fallback.mail };
+function resolveContactForRole(code, role) {
+  const normalizedRole = normalizeRole(role);
+  const byPlz = contactDirectory.get(code);
+
+  if (byPlz && byPlz.has(normalizedRole)) {
+    return byPlz.get(normalizedRole);
   }
 
   return getDefaultContact(code, normalizedRole);
@@ -498,7 +486,6 @@ function resolveContactForRole(code, role) {
 function createContactData(code) {
   return REQUIRED_ROLES.map((role) => resolveContactForRole(code, role));
 }
-
 function closePopupAndClearSelection() {
   if (activeCode) {
     const activeRegion = regionNodes.get(activeCode);
@@ -634,26 +621,28 @@ function drawRegions(regions) {
   }
 }
 
-async function loadContactRules() {
+async function loadContactDirectory() {
   try {
     const response = await fetch(new URL("./plz_contacts.json", import.meta.url));
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const payload = await response.json();
     if (Array.isArray(payload?.contacts)) {
-      contactRules = payload.contacts;
+      contactDirectory = buildContactDirectory(payload.contacts);
+      return;
     }
+
+    contactDirectory = new Map();
   } catch (error) {
-    console.warn("Kontaktregeln konnten nicht geladen werden, Fallback wird verwendet.", error);
-    contactRules = [];
+    console.warn("Kontaktdaten konnten nicht geladen werden, Fallback wird verwendet.", error);
+    contactDirectory = new Map();
   }
 }
-
 async function init() {
   try {
     const [geoResponse] = await Promise.all([
       fetch(new URL("./gemeinden_simplify200.geojson", import.meta.url)),
-      loadContactRules()
+      loadContactDirectory()
     ]);
 
     if (!geoResponse.ok) throw new Error(`HTTP ${geoResponse.status}`);

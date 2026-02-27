@@ -2,43 +2,57 @@
 
 Interaktive Deutschlandkarte mit PLZ-2-Gebieten (erste zwei Ziffern) inkl. klickbarem Kontakt-Popup für `VAD`, `KAMLIGHT`, `KAMHEAVY`.
 
-## Ziel der Datenpflege (barrierearm)
-Kontaktdaten werden **nicht** im Frontend-Code gepflegt, sondern in einer leicht editierbaren CSV-Datei:
+## Datenpflege: vollständige Liste pro PLZ-2
 
-- Datei: `data/plz_contacts.csv`
-- Pflegebar in Excel / LibreOffice / Google Sheets
-- Regeln statt Einzelpflege je PLZ:
-  - `default` (Fallback)
-  - `range` (z. B. 20-39)
-  - `exact` (Ausnahme, z. B. 10)
+Kontakte werden **nicht** im Frontend-Code gepflegt, sondern in:
 
-Damit kann das Fachteam Daten ohne Codeänderungen pflegen.
+- [data/plz_contacts.csv](data/plz_contacts.csv)
 
-## Datenpipeline
+Die CSV enthält die **komplette Liste** `00` bis `99` und pro PLZ-2 jeweils drei Einträge:
 
-1. CSV pflegen: `data/plz_contacts.csv`
-2. Build-Skript erzeugt JSON: `scripts/build-contacts.mjs`
-3. Ausgabe für Frontend: `public/plz_contacts.json`
-4. Karte lädt zur Laufzeit `plz_contacts.json` und löst Regeln pro PLZ-2 auf.
+- `VAD`
+- `KAMLIGHT`
+- `KAMHEAVY`
 
-Priorität der Regeln im Frontend:
-
-1. `exact`
-2. `range` (kleinster Bereich gewinnt)
-3. `default`
-4. Fallback-Kontakt (wenn nichts gepflegt ist)
+Damit hat jede PLZ-2 eigene Eingabefelder (`name`, `tel`, `mail`).
 
 ## CSV-Format
-Pflicht-Header:
 
-`rule_type,plz2_exact,plz2_from,plz2_to,role,name,tel,mail`
+Header:
 
-Erlaubte `rule_type`:
-- `default`
-- `range`
-- `exact`
+`plz2,role,name,tel,mail`
 
-Beispiele stehen bereits in `data/plz_contacts.csv`.
+Beispiel:
+
+```csv
+plz2,role,name,tel,mail
+00,VAD,VAD Team PLZ 00,+49 30 10000 100,vad.plz00@firma.de
+00,KAMLIGHT,KAMLIGHT Team PLZ 00,+49 30 10001 101,kamlight.plz00@firma.de
+00,KAMHEAVY,KAMHEAVY Team PLZ 00,+49 30 10002 102,kamheavy.plz00@firma.de
+```
+
+## Build-Pipeline
+
+1. CSV pflegen (`data/plz_contacts.csv`)
+2. JSON generieren (`public/plz_contacts.json`)
+3. Karte lädt JSON automatisch
+
+Skripte:
+
+- `npm run build:contacts` -> validiert CSV und erzeugt JSON
+- `npm run dev` -> erzeugt JSON und startet Dev-Server
+- `npm run build` -> erzeugt JSON und baut Dist
+
+## Validierungen im Build-Skript
+
+Das Skript [scripts/build-contacts.mjs](scripts/build-contacts.mjs) prüft:
+
+- korrekten Header
+- `plz2` zweistellig (`00-99`)
+- `role` nur `VAD`, `KAMLIGHT`, `KAMHEAVY`
+- `name`, `tel`, `mail` vorhanden
+- keine doppelten Kombinationen `plz2+role`
+- Vollständigkeit: alle `100 x 3 = 300` Kombinationen vorhanden
 
 ## Entwicklung
 
@@ -47,50 +61,21 @@ npm install
 npm run dev
 ```
 
-Wichtige Skripte:
+## Deployment / iFrame
 
-- `npm run build:contacts` erzeugt `public/plz_contacts.json`
-- `npm run dev` erzeugt zuerst Kontakte und startet dann Vite
-- `npm run build` erzeugt Kontakte und erstellt den Build
+1. `npm run build`
+2. `dist/` deployen
+3. `map.html` als iFrame einbinden
 
-## Projektstruktur
+Beispiel:
 
-- `map.js`: Kartenlogik, PLZ-Rendering, Label-Placement, Kontakt-Resolver
-- `styles.css`: CI-angepasste UI-Styles
-- `map.html`: Kartenansicht
-- `public/gemeinden_simplify200.geojson`: Geodaten
-- `public/plz_contacts.json`: generierte Kontaktregeln
-- `data/plz_contacts.csv`: editierbare Quelldaten
-- `scripts/build-contacts.mjs`: CSV -> JSON Generator
+```html
+<iframe
+  src="https://deine-domain.de/map.html"
+  title="Interaktive Deutschlandkarte PLZ-2"
+  style="width:100%;max-width:1000px;height:640px;border:0;border-radius:12px"
+  loading="lazy"
+></iframe>
+```
 
-## Hinweis zur Pflege
-Wenn ihr viele Änderungen habt:
-
-1. CSV in Tabellen-Tool pflegen
-2. Als CSV exportieren
-3. `npm run build:contacts` ausführen
-4. Ergebnis in Karte prüfen
-
-## Produktions-Check (Website/Intranet + iFrame)
-
-Das Projekt ist iFrame-fähig, wenn der Hostserver folgende Punkte erfüllt:
-
-1. **iFrame-Header erlauben**
-   - Kein `X-Frame-Options: DENY` oder `SAMEORIGIN` (falls auf anderer Domain eingebettet)
-   - Passende `Content-Security-Policy` mit `frame-ancestors` setzen
-
-2. **Statisches Hosting der Dist-Dateien**
-   - `npm run build`
-   - Inhalt von `dist/` deployen
-
-3. **Pfad-Setup**
-   - Karte kann als `map.html` direkt oder in Unterpfaden gehostet werden
-   - Daten (`gemeinden_simplify200.geojson`, `plz_contacts.json`) werden relativ zu `map.js` geladen
-
-4. **CORS (nur falls Cross-Domain)**
-   - Falls Karte auf Domain A liegt und in Domain B eingebettet wird: Host muss Embedding/CORS entsprechend erlauben
-
-5. **Datenpflege-Workflow**
-   - CSV pflegen: `data/plz_contacts.csv`
-   - JSON erzeugen: `npm run build:contacts`
-   - Danach neu deployen
+Hinweis: Der Host muss iFrame-Einbettung erlauben (`X-Frame-Options`/`CSP frame-ancestors`).

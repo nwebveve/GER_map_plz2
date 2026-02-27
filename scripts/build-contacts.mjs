@@ -3,7 +3,8 @@ import { resolve } from "node:path";
 
 const INPUT_PATH = resolve(process.cwd(), "data/plz_contacts.csv");
 const OUTPUT_PATH = resolve(process.cwd(), "public/plz_contacts.json");
-const RULE_TYPES = new Set(["default", "range", "exact"]);
+const REQUIRED_ROLES = ["VAD", "KAMLIGHT", "KAMHEAVY"];
+const ALL_PLZ2 = Array.from({ length: 100 }, (_, i) => String(i).padStart(2, "0"));
 
 function parseCsvLine(line) {
   const result = [];
@@ -36,89 +37,60 @@ function parseCsvLine(line) {
   return result;
 }
 
-function toNullable2Digit(value) {
-  const trimmed = String(value || "").trim();
-  if (!trimmed) return null;
-  if (!/^\d{2}$/.test(trimmed)) {
-    throw new Error(`Ungültiger 2-stelliger PLZ-Wert: ${value}`);
+function normalizePlz2(value, lineNo) {
+  const plz2 = String(value || "").trim();
+  if (!/^\d{2}$/.test(plz2)) {
+    throw new Error(`Zeile ${lineNo}: plz2 muss zweistellig sein (00-99)`);
   }
-  return trimmed;
+  return plz2;
 }
 
-function toRangeNumber(value, fieldName) {
-  const v = toNullable2Digit(value);
-  if (v === null) {
-    throw new Error(`${fieldName} ist erforderlich`);
+function normalizeRole(value, lineNo) {
+  const role = String(value || "").trim().toUpperCase();
+  if (!REQUIRED_ROLES.includes(role)) {
+    throw new Error(`Zeile ${lineNo}: role muss einer von ${REQUIRED_ROLES.join(", ")} sein`);
   }
-  return Number.parseInt(v, 10);
+  return role;
 }
 
 function normalizeRecord(raw, lineNo) {
-  const ruleType = String(raw.rule_type || "").trim().toLowerCase();
-  if (!RULE_TYPES.has(ruleType)) {
-    throw new Error(`Zeile ${lineNo}: rule_type muss exact, range oder default sein`);
-  }
-
-  const role = String(raw.role || "").trim().toUpperCase();
+  const plz2 = normalizePlz2(raw.plz2, lineNo);
+  const role = normalizeRole(raw.role, lineNo);
   const name = String(raw.name || "").trim();
   const tel = String(raw.tel || "").trim();
   const mail = String(raw.mail || "").trim();
 
-  if (!role || !name || !tel || !mail) {
-    throw new Error(`Zeile ${lineNo}: role, name, tel und mail sind Pflichtfelder`);
+  if (!name || !tel || !mail) {
+    throw new Error(`Zeile ${lineNo}: name, tel und mail sind Pflichtfelder`);
   }
 
-  let plz2Exact = null;
-  let plz2From = null;
-  let plz2To = null;
-
-  if (ruleType === "exact") {
-    plz2Exact = toNullable2Digit(raw.plz2_exact);
-    if (plz2Exact === null) {
-      throw new Error(`Zeile ${lineNo}: plz2_exact ist für exact-Regeln erforderlich`);
-    }
-  }
-
-  if (ruleType === "range") {
-    plz2From = toRangeNumber(raw.plz2_from, "plz2_from");
-    plz2To = toRangeNumber(raw.plz2_to, "plz2_to");
-    if (plz2From > plz2To) {
-      throw new Error(`Zeile ${lineNo}: plz2_from darf nicht größer als plz2_to sein`);
-    }
-  }
-
-  return {
-    rule_type: ruleType,
-    plz2_exact: plz2Exact,
-    plz2_from: plz2From,
-    plz2_to: plz2To,
-    role,
-    name,
-    tel,
-    mail,
-    line: lineNo
-  };
+  return { plz2, role, name, tel, mail, line: lineNo };
 }
 
-function compareRules(a, b) {
-  const order = { exact: 0, range: 1, default: 2 };
-  if (order[a.rule_type] !== order[b.rule_type]) {
-    return order[a.rule_type] - order[b.rule_type];
+function compareRecords(a, b) {
+  const aNum = Number.parseInt(a.plz2, 10);
+  const bNum = Number.parseInt(b.plz2, 10);
+  if (aNum !== bNum) return aNum - bNum;
+  return REQUIRED_ROLES.indexOf(a.role) - REQUIRED_ROLES.indexOf(b.role);
+}
+
+function validateCompleteness(records) {
+  const present = new Set(records.map((r) => `${r.plz2}|${r.role}`));
+  const missing = [];
+
+  for (const plz2 of ALL_PLZ2) {
+    for (const role of REQUIRED_ROLES) {
+      const key = `${plz2}|${role}`;
+      if (!present.has(key)) missing.push(key);
+    }
   }
 
-  if (a.rule_type === "range") {
-    const spanA = a.plz2_to - a.plz2_from;
-    const spanB = b.plz2_to - b.plz2_from;
-    if (spanA !== spanB) return spanA - spanB;
-    if (a.plz2_from !== b.plz2_from) return a.plz2_from - b.plz2_from;
+  if (missing.length > 0) {
+    const preview = missing.slice(0, 20).join(", ");
+    throw new Error(
+      `CSV ist nicht vollständig. Fehlende Kombinationen: ${preview}${missing.length > 20 ? " ..." : ""}`
+    );
   }
-
-  if (a.rule_type === "exact") {
-    if (a.plz2_exact !== b.plz2_exact) return a.plz2_exact.localeCompare(b.plz2_exact);
-  }
-
-  if (a.role !== b.role) return a.role.localeCompare(b.role);
-  return a.line - b.line;
 }
 
 async function run() {
@@ -134,16 +106,7 @@ async function run() {
   }
 
   const headers = parseCsvLine(lines[0]);
-  const requiredHeaders = [
-    "rule_type",
-    "plz2_exact",
-    "plz2_from",
-    "plz2_to",
-    "role",
-    "name",
-    "tel",
-    "mail"
-  ];
+  const requiredHeaders = ["plz2", "role", "name", "tel", "mail"];
 
   for (const header of requiredHeaders) {
     if (!headers.includes(header)) {
@@ -152,6 +115,7 @@ async function run() {
   }
 
   const records = [];
+  const seenKeys = new Set();
 
   for (let i = 1; i < lines.length; i += 1) {
     const cells = parseCsvLine(lines[i]);
@@ -161,23 +125,33 @@ async function run() {
       raw[headers[col]] = cells[col] ?? "";
     }
 
-    records.push(normalizeRecord(raw, i + 1));
+    const record = normalizeRecord(raw, i + 1);
+    const key = `${record.plz2}|${record.role}`;
+    if (seenKeys.has(key)) {
+      throw new Error(`Zeile ${i + 1}: Doppelte Kombination ${key}`);
+    }
+
+    seenKeys.add(key);
+    records.push(record);
   }
 
-  records.sort(compareRules);
+  validateCompleteness(records);
+  records.sort(compareRecords);
 
   const output = {
-    version: 1,
+    version: 2,
     generated_at: new Date().toISOString(),
     source: "data/plz_contacts.csv",
-    contact_roles: [...new Set(records.map((r) => r.role))],
+    required_roles: REQUIRED_ROLES,
+    total_plz2: ALL_PLZ2.length,
+    total_entries: records.length,
     contacts: records.map(({ line, ...rest }) => rest)
   };
 
   await mkdir(resolve(process.cwd(), "public"), { recursive: true });
   await writeFile(OUTPUT_PATH, JSON.stringify(output, null, 2));
 
-  console.log(`OK: ${records.length} Kontaktregeln nach ${OUTPUT_PATH} geschrieben.`);
+  console.log(`OK: ${records.length} Kontakte nach ${OUTPUT_PATH} geschrieben.`);
 }
 
 run().catch((error) => {

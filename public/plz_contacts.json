@@ -1,222 +1,2114 @@
 {
-  "version": 1,
-  "generated_at": "2026-02-27T03:01:00.721Z",
+  "version": 2,
+  "generated_at": "2026-02-27T03:11:36.114Z",
   "source": "data/plz_contacts.csv",
-  "contact_roles": [
-    "KAMHEAVY",
+  "required_roles": [
+    "VAD",
     "KAMLIGHT",
-    "VAD"
+    "KAMHEAVY"
   ],
+  "total_plz2": 100,
+  "total_entries": 300,
   "contacts": [
     {
-      "rule_type": "exact",
-      "plz2_exact": "10",
-      "plz2_from": null,
-      "plz2_to": null,
-      "role": "KAMHEAVY",
-      "name": "KAMHEAVY Berlin",
-      "tel": "+49 30 9999 1003",
-      "mail": "kamheavy.berlin@firma.de"
-    },
-    {
-      "rule_type": "exact",
-      "plz2_exact": "10",
-      "plz2_from": null,
-      "plz2_to": null,
-      "role": "KAMLIGHT",
-      "name": "KAMLIGHT Berlin",
-      "tel": "+49 30 9999 1002",
-      "mail": "kamlight.berlin@firma.de"
-    },
-    {
-      "rule_type": "exact",
-      "plz2_exact": "10",
-      "plz2_from": null,
-      "plz2_to": null,
+      "plz2": "00",
       "role": "VAD",
-      "name": "VAD Berlin",
-      "tel": "+49 30 9999 1001",
-      "mail": "vad.berlin@firma.de"
+      "name": "VAD Team PLZ 00",
+      "tel": "+49 30 10000 100",
+      "mail": "vad.plz00@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 0,
-      "plz2_to": 19,
-      "role": "KAMHEAVY",
-      "name": "KAMHEAVY Nord",
-      "tel": "+49 40 1000 1113",
-      "mail": "kamheavy.nord@firma.de"
-    },
-    {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 0,
-      "plz2_to": 19,
+      "plz2": "00",
       "role": "KAMLIGHT",
-      "name": "KAMLIGHT Nord",
-      "tel": "+49 40 1000 1112",
-      "mail": "kamlight.nord@firma.de"
+      "name": "KAMLIGHT Team PLZ 00",
+      "tel": "+49 30 10001 101",
+      "mail": "kamlight.plz00@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 0,
-      "plz2_to": 19,
-      "role": "VAD",
-      "name": "VAD Nord",
-      "tel": "+49 40 1000 1111",
-      "mail": "vad.nord@firma.de"
-    },
-    {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 20,
-      "plz2_to": 39,
+      "plz2": "00",
       "role": "KAMHEAVY",
-      "name": "KAMHEAVY Mitte",
-      "tel": "+49 69 2000 2113",
-      "mail": "kamheavy.mitte@firma.de"
+      "name": "KAMHEAVY Team PLZ 00",
+      "tel": "+49 30 10002 102",
+      "mail": "kamheavy.plz00@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 20,
-      "plz2_to": 39,
-      "role": "KAMLIGHT",
-      "name": "KAMLIGHT Mitte",
-      "tel": "+49 69 2000 2112",
-      "mail": "kamlight.mitte@firma.de"
-    },
-    {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 20,
-      "plz2_to": 39,
+      "plz2": "01",
       "role": "VAD",
-      "name": "VAD Mitte",
-      "tel": "+49 69 2000 2111",
-      "mail": "vad.mitte@firma.de"
+      "name": "VAD Team PLZ 01",
+      "tel": "+49 30 10010 100",
+      "mail": "vad.plz01@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 40,
-      "plz2_to": 59,
+      "plz2": "01",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 01",
+      "tel": "+49 30 10011 101",
+      "mail": "kamlight.plz01@firma.de"
+    },
+    {
+      "plz2": "01",
       "role": "KAMHEAVY",
-      "name": "KAMHEAVY West",
-      "tel": "+49 211 3000 3113",
-      "mail": "kamheavy.west@firma.de"
+      "name": "KAMHEAVY Team PLZ 01",
+      "tel": "+49 30 10012 102",
+      "mail": "kamheavy.plz01@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 40,
-      "plz2_to": 59,
-      "role": "KAMLIGHT",
-      "name": "KAMLIGHT West",
-      "tel": "+49 211 3000 3112",
-      "mail": "kamlight.west@firma.de"
-    },
-    {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 40,
-      "plz2_to": 59,
+      "plz2": "02",
       "role": "VAD",
-      "name": "VAD West",
-      "tel": "+49 211 3000 3111",
-      "mail": "vad.west@firma.de"
+      "name": "VAD Team PLZ 02",
+      "tel": "+49 30 10020 100",
+      "mail": "vad.plz02@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 60,
-      "plz2_to": 79,
+      "plz2": "02",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 02",
+      "tel": "+49 30 10021 101",
+      "mail": "kamlight.plz02@firma.de"
+    },
+    {
+      "plz2": "02",
       "role": "KAMHEAVY",
-      "name": "KAMHEAVY Südwest",
-      "tel": "+49 711 4000 4113",
-      "mail": "kamheavy.suedwest@firma.de"
+      "name": "KAMHEAVY Team PLZ 02",
+      "tel": "+49 30 10022 102",
+      "mail": "kamheavy.plz02@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 60,
-      "plz2_to": 79,
-      "role": "KAMLIGHT",
-      "name": "KAMLIGHT Südwest",
-      "tel": "+49 711 4000 4112",
-      "mail": "kamlight.suedwest@firma.de"
-    },
-    {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 60,
-      "plz2_to": 79,
+      "plz2": "03",
       "role": "VAD",
-      "name": "VAD Südwest",
-      "tel": "+49 711 4000 4111",
-      "mail": "vad.suedwest@firma.de"
+      "name": "VAD Team PLZ 03",
+      "tel": "+49 30 10030 100",
+      "mail": "vad.plz03@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 80,
-      "plz2_to": 99,
+      "plz2": "03",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 03",
+      "tel": "+49 30 10031 101",
+      "mail": "kamlight.plz03@firma.de"
+    },
+    {
+      "plz2": "03",
       "role": "KAMHEAVY",
-      "name": "KAMHEAVY Süd",
-      "tel": "+49 89 5000 5113",
-      "mail": "kamheavy.sued@firma.de"
+      "name": "KAMHEAVY Team PLZ 03",
+      "tel": "+49 30 10032 102",
+      "mail": "kamheavy.plz03@firma.de"
     },
     {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 80,
-      "plz2_to": 99,
-      "role": "KAMLIGHT",
-      "name": "KAMLIGHT Süd",
-      "tel": "+49 89 5000 5112",
-      "mail": "kamlight.sued@firma.de"
-    },
-    {
-      "rule_type": "range",
-      "plz2_exact": null,
-      "plz2_from": 80,
-      "plz2_to": 99,
+      "plz2": "04",
       "role": "VAD",
-      "name": "VAD Süd",
-      "tel": "+49 89 5000 5111",
-      "mail": "vad.sued@firma.de"
+      "name": "VAD Team PLZ 04",
+      "tel": "+49 30 10040 100",
+      "mail": "vad.plz04@firma.de"
     },
     {
-      "rule_type": "default",
-      "plz2_exact": null,
-      "plz2_from": null,
-      "plz2_to": null,
+      "plz2": "04",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 04",
+      "tel": "+49 30 10041 101",
+      "mail": "kamlight.plz04@firma.de"
+    },
+    {
+      "plz2": "04",
       "role": "KAMHEAVY",
-      "name": "KAMHEAVY Zentrale",
-      "tel": "+49 30 5555 0003",
-      "mail": "kamheavy@firma.de"
+      "name": "KAMHEAVY Team PLZ 04",
+      "tel": "+49 30 10042 102",
+      "mail": "kamheavy.plz04@firma.de"
     },
     {
-      "rule_type": "default",
-      "plz2_exact": null,
-      "plz2_from": null,
-      "plz2_to": null,
-      "role": "KAMLIGHT",
-      "name": "KAMLIGHT Zentrale",
-      "tel": "+49 30 5555 0002",
-      "mail": "kamlight@firma.de"
-    },
-    {
-      "rule_type": "default",
-      "plz2_exact": null,
-      "plz2_from": null,
-      "plz2_to": null,
+      "plz2": "05",
       "role": "VAD",
-      "name": "VAD Zentrale",
-      "tel": "+49 30 5555 0001",
-      "mail": "vad@firma.de"
+      "name": "VAD Team PLZ 05",
+      "tel": "+49 30 10050 100",
+      "mail": "vad.plz05@firma.de"
+    },
+    {
+      "plz2": "05",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 05",
+      "tel": "+49 30 10051 101",
+      "mail": "kamlight.plz05@firma.de"
+    },
+    {
+      "plz2": "05",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 05",
+      "tel": "+49 30 10052 102",
+      "mail": "kamheavy.plz05@firma.de"
+    },
+    {
+      "plz2": "06",
+      "role": "VAD",
+      "name": "VAD Team PLZ 06",
+      "tel": "+49 30 10060 100",
+      "mail": "vad.plz06@firma.de"
+    },
+    {
+      "plz2": "06",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 06",
+      "tel": "+49 30 10061 101",
+      "mail": "kamlight.plz06@firma.de"
+    },
+    {
+      "plz2": "06",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 06",
+      "tel": "+49 30 10062 102",
+      "mail": "kamheavy.plz06@firma.de"
+    },
+    {
+      "plz2": "07",
+      "role": "VAD",
+      "name": "VAD Team PLZ 07",
+      "tel": "+49 30 10070 100",
+      "mail": "vad.plz07@firma.de"
+    },
+    {
+      "plz2": "07",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 07",
+      "tel": "+49 30 10071 101",
+      "mail": "kamlight.plz07@firma.de"
+    },
+    {
+      "plz2": "07",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 07",
+      "tel": "+49 30 10072 102",
+      "mail": "kamheavy.plz07@firma.de"
+    },
+    {
+      "plz2": "08",
+      "role": "VAD",
+      "name": "VAD Team PLZ 08",
+      "tel": "+49 30 10080 100",
+      "mail": "vad.plz08@firma.de"
+    },
+    {
+      "plz2": "08",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 08",
+      "tel": "+49 30 10081 101",
+      "mail": "kamlight.plz08@firma.de"
+    },
+    {
+      "plz2": "08",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 08",
+      "tel": "+49 30 10082 102",
+      "mail": "kamheavy.plz08@firma.de"
+    },
+    {
+      "plz2": "09",
+      "role": "VAD",
+      "name": "VAD Team PLZ 09",
+      "tel": "+49 30 10090 100",
+      "mail": "vad.plz09@firma.de"
+    },
+    {
+      "plz2": "09",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 09",
+      "tel": "+49 30 10091 101",
+      "mail": "kamlight.plz09@firma.de"
+    },
+    {
+      "plz2": "09",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 09",
+      "tel": "+49 30 10092 102",
+      "mail": "kamheavy.plz09@firma.de"
+    },
+    {
+      "plz2": "10",
+      "role": "VAD",
+      "name": "VAD Team PLZ 10",
+      "tel": "+49 30 10100 100",
+      "mail": "vad.plz10@firma.de"
+    },
+    {
+      "plz2": "10",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 10",
+      "tel": "+49 30 10101 101",
+      "mail": "kamlight.plz10@firma.de"
+    },
+    {
+      "plz2": "10",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 10",
+      "tel": "+49 30 10102 102",
+      "mail": "kamheavy.plz10@firma.de"
+    },
+    {
+      "plz2": "11",
+      "role": "VAD",
+      "name": "VAD Team PLZ 11",
+      "tel": "+49 30 10110 100",
+      "mail": "vad.plz11@firma.de"
+    },
+    {
+      "plz2": "11",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 11",
+      "tel": "+49 30 10111 101",
+      "mail": "kamlight.plz11@firma.de"
+    },
+    {
+      "plz2": "11",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 11",
+      "tel": "+49 30 10112 102",
+      "mail": "kamheavy.plz11@firma.de"
+    },
+    {
+      "plz2": "12",
+      "role": "VAD",
+      "name": "VAD Team PLZ 12",
+      "tel": "+49 30 10120 100",
+      "mail": "vad.plz12@firma.de"
+    },
+    {
+      "plz2": "12",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 12",
+      "tel": "+49 30 10121 101",
+      "mail": "kamlight.plz12@firma.de"
+    },
+    {
+      "plz2": "12",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 12",
+      "tel": "+49 30 10122 102",
+      "mail": "kamheavy.plz12@firma.de"
+    },
+    {
+      "plz2": "13",
+      "role": "VAD",
+      "name": "VAD Team PLZ 13",
+      "tel": "+49 30 10130 100",
+      "mail": "vad.plz13@firma.de"
+    },
+    {
+      "plz2": "13",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 13",
+      "tel": "+49 30 10131 101",
+      "mail": "kamlight.plz13@firma.de"
+    },
+    {
+      "plz2": "13",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 13",
+      "tel": "+49 30 10132 102",
+      "mail": "kamheavy.plz13@firma.de"
+    },
+    {
+      "plz2": "14",
+      "role": "VAD",
+      "name": "VAD Team PLZ 14",
+      "tel": "+49 30 10140 100",
+      "mail": "vad.plz14@firma.de"
+    },
+    {
+      "plz2": "14",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 14",
+      "tel": "+49 30 10141 101",
+      "mail": "kamlight.plz14@firma.de"
+    },
+    {
+      "plz2": "14",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 14",
+      "tel": "+49 30 10142 102",
+      "mail": "kamheavy.plz14@firma.de"
+    },
+    {
+      "plz2": "15",
+      "role": "VAD",
+      "name": "VAD Team PLZ 15",
+      "tel": "+49 30 10150 100",
+      "mail": "vad.plz15@firma.de"
+    },
+    {
+      "plz2": "15",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 15",
+      "tel": "+49 30 10151 101",
+      "mail": "kamlight.plz15@firma.de"
+    },
+    {
+      "plz2": "15",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 15",
+      "tel": "+49 30 10152 102",
+      "mail": "kamheavy.plz15@firma.de"
+    },
+    {
+      "plz2": "16",
+      "role": "VAD",
+      "name": "VAD Team PLZ 16",
+      "tel": "+49 30 10160 100",
+      "mail": "vad.plz16@firma.de"
+    },
+    {
+      "plz2": "16",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 16",
+      "tel": "+49 30 10161 101",
+      "mail": "kamlight.plz16@firma.de"
+    },
+    {
+      "plz2": "16",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 16",
+      "tel": "+49 30 10162 102",
+      "mail": "kamheavy.plz16@firma.de"
+    },
+    {
+      "plz2": "17",
+      "role": "VAD",
+      "name": "VAD Team PLZ 17",
+      "tel": "+49 30 10170 100",
+      "mail": "vad.plz17@firma.de"
+    },
+    {
+      "plz2": "17",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 17",
+      "tel": "+49 30 10171 101",
+      "mail": "kamlight.plz17@firma.de"
+    },
+    {
+      "plz2": "17",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 17",
+      "tel": "+49 30 10172 102",
+      "mail": "kamheavy.plz17@firma.de"
+    },
+    {
+      "plz2": "18",
+      "role": "VAD",
+      "name": "VAD Team PLZ 18",
+      "tel": "+49 30 10180 100",
+      "mail": "vad.plz18@firma.de"
+    },
+    {
+      "plz2": "18",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 18",
+      "tel": "+49 30 10181 101",
+      "mail": "kamlight.plz18@firma.de"
+    },
+    {
+      "plz2": "18",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 18",
+      "tel": "+49 30 10182 102",
+      "mail": "kamheavy.plz18@firma.de"
+    },
+    {
+      "plz2": "19",
+      "role": "VAD",
+      "name": "VAD Team PLZ 19",
+      "tel": "+49 30 10190 100",
+      "mail": "vad.plz19@firma.de"
+    },
+    {
+      "plz2": "19",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 19",
+      "tel": "+49 30 10191 101",
+      "mail": "kamlight.plz19@firma.de"
+    },
+    {
+      "plz2": "19",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 19",
+      "tel": "+49 30 10192 102",
+      "mail": "kamheavy.plz19@firma.de"
+    },
+    {
+      "plz2": "20",
+      "role": "VAD",
+      "name": "VAD Team PLZ 20",
+      "tel": "+49 30 10200 100",
+      "mail": "vad.plz20@firma.de"
+    },
+    {
+      "plz2": "20",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 20",
+      "tel": "+49 30 10201 101",
+      "mail": "kamlight.plz20@firma.de"
+    },
+    {
+      "plz2": "20",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 20",
+      "tel": "+49 30 10202 102",
+      "mail": "kamheavy.plz20@firma.de"
+    },
+    {
+      "plz2": "21",
+      "role": "VAD",
+      "name": "VAD Team PLZ 21",
+      "tel": "+49 30 10210 100",
+      "mail": "vad.plz21@firma.de"
+    },
+    {
+      "plz2": "21",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 21",
+      "tel": "+49 30 10211 101",
+      "mail": "kamlight.plz21@firma.de"
+    },
+    {
+      "plz2": "21",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 21",
+      "tel": "+49 30 10212 102",
+      "mail": "kamheavy.plz21@firma.de"
+    },
+    {
+      "plz2": "22",
+      "role": "VAD",
+      "name": "VAD Team PLZ 22",
+      "tel": "+49 30 10220 100",
+      "mail": "vad.plz22@firma.de"
+    },
+    {
+      "plz2": "22",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 22",
+      "tel": "+49 30 10221 101",
+      "mail": "kamlight.plz22@firma.de"
+    },
+    {
+      "plz2": "22",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 22",
+      "tel": "+49 30 10222 102",
+      "mail": "kamheavy.plz22@firma.de"
+    },
+    {
+      "plz2": "23",
+      "role": "VAD",
+      "name": "VAD Team PLZ 23",
+      "tel": "+49 30 10230 100",
+      "mail": "vad.plz23@firma.de"
+    },
+    {
+      "plz2": "23",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 23",
+      "tel": "+49 30 10231 101",
+      "mail": "kamlight.plz23@firma.de"
+    },
+    {
+      "plz2": "23",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 23",
+      "tel": "+49 30 10232 102",
+      "mail": "kamheavy.plz23@firma.de"
+    },
+    {
+      "plz2": "24",
+      "role": "VAD",
+      "name": "VAD Team PLZ 24",
+      "tel": "+49 30 10240 100",
+      "mail": "vad.plz24@firma.de"
+    },
+    {
+      "plz2": "24",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 24",
+      "tel": "+49 30 10241 101",
+      "mail": "kamlight.plz24@firma.de"
+    },
+    {
+      "plz2": "24",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 24",
+      "tel": "+49 30 10242 102",
+      "mail": "kamheavy.plz24@firma.de"
+    },
+    {
+      "plz2": "25",
+      "role": "VAD",
+      "name": "VAD Team PLZ 25",
+      "tel": "+49 30 10250 100",
+      "mail": "vad.plz25@firma.de"
+    },
+    {
+      "plz2": "25",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 25",
+      "tel": "+49 30 10251 101",
+      "mail": "kamlight.plz25@firma.de"
+    },
+    {
+      "plz2": "25",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 25",
+      "tel": "+49 30 10252 102",
+      "mail": "kamheavy.plz25@firma.de"
+    },
+    {
+      "plz2": "26",
+      "role": "VAD",
+      "name": "VAD Team PLZ 26",
+      "tel": "+49 30 10260 100",
+      "mail": "vad.plz26@firma.de"
+    },
+    {
+      "plz2": "26",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 26",
+      "tel": "+49 30 10261 101",
+      "mail": "kamlight.plz26@firma.de"
+    },
+    {
+      "plz2": "26",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 26",
+      "tel": "+49 30 10262 102",
+      "mail": "kamheavy.plz26@firma.de"
+    },
+    {
+      "plz2": "27",
+      "role": "VAD",
+      "name": "VAD Team PLZ 27",
+      "tel": "+49 30 10270 100",
+      "mail": "vad.plz27@firma.de"
+    },
+    {
+      "plz2": "27",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 27",
+      "tel": "+49 30 10271 101",
+      "mail": "kamlight.plz27@firma.de"
+    },
+    {
+      "plz2": "27",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 27",
+      "tel": "+49 30 10272 102",
+      "mail": "kamheavy.plz27@firma.de"
+    },
+    {
+      "plz2": "28",
+      "role": "VAD",
+      "name": "VAD Team PLZ 28",
+      "tel": "+49 30 10280 100",
+      "mail": "vad.plz28@firma.de"
+    },
+    {
+      "plz2": "28",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 28",
+      "tel": "+49 30 10281 101",
+      "mail": "kamlight.plz28@firma.de"
+    },
+    {
+      "plz2": "28",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 28",
+      "tel": "+49 30 10282 102",
+      "mail": "kamheavy.plz28@firma.de"
+    },
+    {
+      "plz2": "29",
+      "role": "VAD",
+      "name": "VAD Team PLZ 29",
+      "tel": "+49 30 10290 100",
+      "mail": "vad.plz29@firma.de"
+    },
+    {
+      "plz2": "29",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 29",
+      "tel": "+49 30 10291 101",
+      "mail": "kamlight.plz29@firma.de"
+    },
+    {
+      "plz2": "29",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 29",
+      "tel": "+49 30 10292 102",
+      "mail": "kamheavy.plz29@firma.de"
+    },
+    {
+      "plz2": "30",
+      "role": "VAD",
+      "name": "VAD Team PLZ 30",
+      "tel": "+49 30 10300 100",
+      "mail": "vad.plz30@firma.de"
+    },
+    {
+      "plz2": "30",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 30",
+      "tel": "+49 30 10301 101",
+      "mail": "kamlight.plz30@firma.de"
+    },
+    {
+      "plz2": "30",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 30",
+      "tel": "+49 30 10302 102",
+      "mail": "kamheavy.plz30@firma.de"
+    },
+    {
+      "plz2": "31",
+      "role": "VAD",
+      "name": "VAD Team PLZ 31",
+      "tel": "+49 30 10310 100",
+      "mail": "vad.plz31@firma.de"
+    },
+    {
+      "plz2": "31",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 31",
+      "tel": "+49 30 10311 101",
+      "mail": "kamlight.plz31@firma.de"
+    },
+    {
+      "plz2": "31",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 31",
+      "tel": "+49 30 10312 102",
+      "mail": "kamheavy.plz31@firma.de"
+    },
+    {
+      "plz2": "32",
+      "role": "VAD",
+      "name": "VAD Team PLZ 32",
+      "tel": "+49 30 10320 100",
+      "mail": "vad.plz32@firma.de"
+    },
+    {
+      "plz2": "32",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 32",
+      "tel": "+49 30 10321 101",
+      "mail": "kamlight.plz32@firma.de"
+    },
+    {
+      "plz2": "32",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 32",
+      "tel": "+49 30 10322 102",
+      "mail": "kamheavy.plz32@firma.de"
+    },
+    {
+      "plz2": "33",
+      "role": "VAD",
+      "name": "VAD Team PLZ 33",
+      "tel": "+49 30 10330 100",
+      "mail": "vad.plz33@firma.de"
+    },
+    {
+      "plz2": "33",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 33",
+      "tel": "+49 30 10331 101",
+      "mail": "kamlight.plz33@firma.de"
+    },
+    {
+      "plz2": "33",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 33",
+      "tel": "+49 30 10332 102",
+      "mail": "kamheavy.plz33@firma.de"
+    },
+    {
+      "plz2": "34",
+      "role": "VAD",
+      "name": "VAD Team PLZ 34",
+      "tel": "+49 30 10340 100",
+      "mail": "vad.plz34@firma.de"
+    },
+    {
+      "plz2": "34",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 34",
+      "tel": "+49 30 10341 101",
+      "mail": "kamlight.plz34@firma.de"
+    },
+    {
+      "plz2": "34",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 34",
+      "tel": "+49 30 10342 102",
+      "mail": "kamheavy.plz34@firma.de"
+    },
+    {
+      "plz2": "35",
+      "role": "VAD",
+      "name": "VAD Team PLZ 35",
+      "tel": "+49 30 10350 100",
+      "mail": "vad.plz35@firma.de"
+    },
+    {
+      "plz2": "35",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 35",
+      "tel": "+49 30 10351 101",
+      "mail": "kamlight.plz35@firma.de"
+    },
+    {
+      "plz2": "35",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 35",
+      "tel": "+49 30 10352 102",
+      "mail": "kamheavy.plz35@firma.de"
+    },
+    {
+      "plz2": "36",
+      "role": "VAD",
+      "name": "VAD Team PLZ 36",
+      "tel": "+49 30 10360 100",
+      "mail": "vad.plz36@firma.de"
+    },
+    {
+      "plz2": "36",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 36",
+      "tel": "+49 30 10361 101",
+      "mail": "kamlight.plz36@firma.de"
+    },
+    {
+      "plz2": "36",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 36",
+      "tel": "+49 30 10362 102",
+      "mail": "kamheavy.plz36@firma.de"
+    },
+    {
+      "plz2": "37",
+      "role": "VAD",
+      "name": "VAD Team PLZ 37",
+      "tel": "+49 30 10370 100",
+      "mail": "vad.plz37@firma.de"
+    },
+    {
+      "plz2": "37",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 37",
+      "tel": "+49 30 10371 101",
+      "mail": "kamlight.plz37@firma.de"
+    },
+    {
+      "plz2": "37",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 37",
+      "tel": "+49 30 10372 102",
+      "mail": "kamheavy.plz37@firma.de"
+    },
+    {
+      "plz2": "38",
+      "role": "VAD",
+      "name": "VAD Team PLZ 38",
+      "tel": "+49 30 10380 100",
+      "mail": "vad.plz38@firma.de"
+    },
+    {
+      "plz2": "38",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 38",
+      "tel": "+49 30 10381 101",
+      "mail": "kamlight.plz38@firma.de"
+    },
+    {
+      "plz2": "38",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 38",
+      "tel": "+49 30 10382 102",
+      "mail": "kamheavy.plz38@firma.de"
+    },
+    {
+      "plz2": "39",
+      "role": "VAD",
+      "name": "VAD Team PLZ 39",
+      "tel": "+49 30 10390 100",
+      "mail": "vad.plz39@firma.de"
+    },
+    {
+      "plz2": "39",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 39",
+      "tel": "+49 30 10391 101",
+      "mail": "kamlight.plz39@firma.de"
+    },
+    {
+      "plz2": "39",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 39",
+      "tel": "+49 30 10392 102",
+      "mail": "kamheavy.plz39@firma.de"
+    },
+    {
+      "plz2": "40",
+      "role": "VAD",
+      "name": "VAD Team PLZ 40",
+      "tel": "+49 30 10400 100",
+      "mail": "vad.plz40@firma.de"
+    },
+    {
+      "plz2": "40",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 40",
+      "tel": "+49 30 10401 101",
+      "mail": "kamlight.plz40@firma.de"
+    },
+    {
+      "plz2": "40",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 40",
+      "tel": "+49 30 10402 102",
+      "mail": "kamheavy.plz40@firma.de"
+    },
+    {
+      "plz2": "41",
+      "role": "VAD",
+      "name": "VAD Team PLZ 41",
+      "tel": "+49 30 10410 100",
+      "mail": "vad.plz41@firma.de"
+    },
+    {
+      "plz2": "41",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 41",
+      "tel": "+49 30 10411 101",
+      "mail": "kamlight.plz41@firma.de"
+    },
+    {
+      "plz2": "41",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 41",
+      "tel": "+49 30 10412 102",
+      "mail": "kamheavy.plz41@firma.de"
+    },
+    {
+      "plz2": "42",
+      "role": "VAD",
+      "name": "VAD Team PLZ 42",
+      "tel": "+49 30 10420 100",
+      "mail": "vad.plz42@firma.de"
+    },
+    {
+      "plz2": "42",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 42",
+      "tel": "+49 30 10421 101",
+      "mail": "kamlight.plz42@firma.de"
+    },
+    {
+      "plz2": "42",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 42",
+      "tel": "+49 30 10422 102",
+      "mail": "kamheavy.plz42@firma.de"
+    },
+    {
+      "plz2": "43",
+      "role": "VAD",
+      "name": "VAD Team PLZ 43",
+      "tel": "+49 30 10430 100",
+      "mail": "vad.plz43@firma.de"
+    },
+    {
+      "plz2": "43",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 43",
+      "tel": "+49 30 10431 101",
+      "mail": "kamlight.plz43@firma.de"
+    },
+    {
+      "plz2": "43",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 43",
+      "tel": "+49 30 10432 102",
+      "mail": "kamheavy.plz43@firma.de"
+    },
+    {
+      "plz2": "44",
+      "role": "VAD",
+      "name": "VAD Team PLZ 44",
+      "tel": "+49 30 10440 100",
+      "mail": "vad.plz44@firma.de"
+    },
+    {
+      "plz2": "44",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 44",
+      "tel": "+49 30 10441 101",
+      "mail": "kamlight.plz44@firma.de"
+    },
+    {
+      "plz2": "44",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 44",
+      "tel": "+49 30 10442 102",
+      "mail": "kamheavy.plz44@firma.de"
+    },
+    {
+      "plz2": "45",
+      "role": "VAD",
+      "name": "VAD Team PLZ 45",
+      "tel": "+49 30 10450 100",
+      "mail": "vad.plz45@firma.de"
+    },
+    {
+      "plz2": "45",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 45",
+      "tel": "+49 30 10451 101",
+      "mail": "kamlight.plz45@firma.de"
+    },
+    {
+      "plz2": "45",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 45",
+      "tel": "+49 30 10452 102",
+      "mail": "kamheavy.plz45@firma.de"
+    },
+    {
+      "plz2": "46",
+      "role": "VAD",
+      "name": "VAD Team PLZ 46",
+      "tel": "+49 30 10460 100",
+      "mail": "vad.plz46@firma.de"
+    },
+    {
+      "plz2": "46",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 46",
+      "tel": "+49 30 10461 101",
+      "mail": "kamlight.plz46@firma.de"
+    },
+    {
+      "plz2": "46",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 46",
+      "tel": "+49 30 10462 102",
+      "mail": "kamheavy.plz46@firma.de"
+    },
+    {
+      "plz2": "47",
+      "role": "VAD",
+      "name": "VAD Team PLZ 47",
+      "tel": "+49 30 10470 100",
+      "mail": "vad.plz47@firma.de"
+    },
+    {
+      "plz2": "47",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 47",
+      "tel": "+49 30 10471 101",
+      "mail": "kamlight.plz47@firma.de"
+    },
+    {
+      "plz2": "47",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 47",
+      "tel": "+49 30 10472 102",
+      "mail": "kamheavy.plz47@firma.de"
+    },
+    {
+      "plz2": "48",
+      "role": "VAD",
+      "name": "VAD Team PLZ 48",
+      "tel": "+49 30 10480 100",
+      "mail": "vad.plz48@firma.de"
+    },
+    {
+      "plz2": "48",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 48",
+      "tel": "+49 30 10481 101",
+      "mail": "kamlight.plz48@firma.de"
+    },
+    {
+      "plz2": "48",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 48",
+      "tel": "+49 30 10482 102",
+      "mail": "kamheavy.plz48@firma.de"
+    },
+    {
+      "plz2": "49",
+      "role": "VAD",
+      "name": "VAD Team PLZ 49",
+      "tel": "+49 30 10490 100",
+      "mail": "vad.plz49@firma.de"
+    },
+    {
+      "plz2": "49",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 49",
+      "tel": "+49 30 10491 101",
+      "mail": "kamlight.plz49@firma.de"
+    },
+    {
+      "plz2": "49",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 49",
+      "tel": "+49 30 10492 102",
+      "mail": "kamheavy.plz49@firma.de"
+    },
+    {
+      "plz2": "50",
+      "role": "VAD",
+      "name": "VAD Team PLZ 50",
+      "tel": "+49 30 10500 100",
+      "mail": "vad.plz50@firma.de"
+    },
+    {
+      "plz2": "50",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 50",
+      "tel": "+49 30 10501 101",
+      "mail": "kamlight.plz50@firma.de"
+    },
+    {
+      "plz2": "50",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 50",
+      "tel": "+49 30 10502 102",
+      "mail": "kamheavy.plz50@firma.de"
+    },
+    {
+      "plz2": "51",
+      "role": "VAD",
+      "name": "VAD Team PLZ 51",
+      "tel": "+49 30 10510 100",
+      "mail": "vad.plz51@firma.de"
+    },
+    {
+      "plz2": "51",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 51",
+      "tel": "+49 30 10511 101",
+      "mail": "kamlight.plz51@firma.de"
+    },
+    {
+      "plz2": "51",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 51",
+      "tel": "+49 30 10512 102",
+      "mail": "kamheavy.plz51@firma.de"
+    },
+    {
+      "plz2": "52",
+      "role": "VAD",
+      "name": "VAD Team PLZ 52",
+      "tel": "+49 30 10520 100",
+      "mail": "vad.plz52@firma.de"
+    },
+    {
+      "plz2": "52",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 52",
+      "tel": "+49 30 10521 101",
+      "mail": "kamlight.plz52@firma.de"
+    },
+    {
+      "plz2": "52",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 52",
+      "tel": "+49 30 10522 102",
+      "mail": "kamheavy.plz52@firma.de"
+    },
+    {
+      "plz2": "53",
+      "role": "VAD",
+      "name": "VAD Team PLZ 53",
+      "tel": "+49 30 10530 100",
+      "mail": "vad.plz53@firma.de"
+    },
+    {
+      "plz2": "53",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 53",
+      "tel": "+49 30 10531 101",
+      "mail": "kamlight.plz53@firma.de"
+    },
+    {
+      "plz2": "53",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 53",
+      "tel": "+49 30 10532 102",
+      "mail": "kamheavy.plz53@firma.de"
+    },
+    {
+      "plz2": "54",
+      "role": "VAD",
+      "name": "VAD Team PLZ 54",
+      "tel": "+49 30 10540 100",
+      "mail": "vad.plz54@firma.de"
+    },
+    {
+      "plz2": "54",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 54",
+      "tel": "+49 30 10541 101",
+      "mail": "kamlight.plz54@firma.de"
+    },
+    {
+      "plz2": "54",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 54",
+      "tel": "+49 30 10542 102",
+      "mail": "kamheavy.plz54@firma.de"
+    },
+    {
+      "plz2": "55",
+      "role": "VAD",
+      "name": "VAD Team PLZ 55",
+      "tel": "+49 30 10550 100",
+      "mail": "vad.plz55@firma.de"
+    },
+    {
+      "plz2": "55",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 55",
+      "tel": "+49 30 10551 101",
+      "mail": "kamlight.plz55@firma.de"
+    },
+    {
+      "plz2": "55",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 55",
+      "tel": "+49 30 10552 102",
+      "mail": "kamheavy.plz55@firma.de"
+    },
+    {
+      "plz2": "56",
+      "role": "VAD",
+      "name": "VAD Team PLZ 56",
+      "tel": "+49 30 10560 100",
+      "mail": "vad.plz56@firma.de"
+    },
+    {
+      "plz2": "56",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 56",
+      "tel": "+49 30 10561 101",
+      "mail": "kamlight.plz56@firma.de"
+    },
+    {
+      "plz2": "56",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 56",
+      "tel": "+49 30 10562 102",
+      "mail": "kamheavy.plz56@firma.de"
+    },
+    {
+      "plz2": "57",
+      "role": "VAD",
+      "name": "VAD Team PLZ 57",
+      "tel": "+49 30 10570 100",
+      "mail": "vad.plz57@firma.de"
+    },
+    {
+      "plz2": "57",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 57",
+      "tel": "+49 30 10571 101",
+      "mail": "kamlight.plz57@firma.de"
+    },
+    {
+      "plz2": "57",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 57",
+      "tel": "+49 30 10572 102",
+      "mail": "kamheavy.plz57@firma.de"
+    },
+    {
+      "plz2": "58",
+      "role": "VAD",
+      "name": "VAD Team PLZ 58",
+      "tel": "+49 30 10580 100",
+      "mail": "vad.plz58@firma.de"
+    },
+    {
+      "plz2": "58",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 58",
+      "tel": "+49 30 10581 101",
+      "mail": "kamlight.plz58@firma.de"
+    },
+    {
+      "plz2": "58",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 58",
+      "tel": "+49 30 10582 102",
+      "mail": "kamheavy.plz58@firma.de"
+    },
+    {
+      "plz2": "59",
+      "role": "VAD",
+      "name": "VAD Team PLZ 59",
+      "tel": "+49 30 10590 100",
+      "mail": "vad.plz59@firma.de"
+    },
+    {
+      "plz2": "59",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 59",
+      "tel": "+49 30 10591 101",
+      "mail": "kamlight.plz59@firma.de"
+    },
+    {
+      "plz2": "59",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 59",
+      "tel": "+49 30 10592 102",
+      "mail": "kamheavy.plz59@firma.de"
+    },
+    {
+      "plz2": "60",
+      "role": "VAD",
+      "name": "VAD Team PLZ 60",
+      "tel": "+49 30 10600 100",
+      "mail": "vad.plz60@firma.de"
+    },
+    {
+      "plz2": "60",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 60",
+      "tel": "+49 30 10601 101",
+      "mail": "kamlight.plz60@firma.de"
+    },
+    {
+      "plz2": "60",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 60",
+      "tel": "+49 30 10602 102",
+      "mail": "kamheavy.plz60@firma.de"
+    },
+    {
+      "plz2": "61",
+      "role": "VAD",
+      "name": "VAD Team PLZ 61",
+      "tel": "+49 30 10610 100",
+      "mail": "vad.plz61@firma.de"
+    },
+    {
+      "plz2": "61",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 61",
+      "tel": "+49 30 10611 101",
+      "mail": "kamlight.plz61@firma.de"
+    },
+    {
+      "plz2": "61",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 61",
+      "tel": "+49 30 10612 102",
+      "mail": "kamheavy.plz61@firma.de"
+    },
+    {
+      "plz2": "62",
+      "role": "VAD",
+      "name": "VAD Team PLZ 62",
+      "tel": "+49 30 10620 100",
+      "mail": "vad.plz62@firma.de"
+    },
+    {
+      "plz2": "62",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 62",
+      "tel": "+49 30 10621 101",
+      "mail": "kamlight.plz62@firma.de"
+    },
+    {
+      "plz2": "62",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 62",
+      "tel": "+49 30 10622 102",
+      "mail": "kamheavy.plz62@firma.de"
+    },
+    {
+      "plz2": "63",
+      "role": "VAD",
+      "name": "VAD Team PLZ 63",
+      "tel": "+49 30 10630 100",
+      "mail": "vad.plz63@firma.de"
+    },
+    {
+      "plz2": "63",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 63",
+      "tel": "+49 30 10631 101",
+      "mail": "kamlight.plz63@firma.de"
+    },
+    {
+      "plz2": "63",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 63",
+      "tel": "+49 30 10632 102",
+      "mail": "kamheavy.plz63@firma.de"
+    },
+    {
+      "plz2": "64",
+      "role": "VAD",
+      "name": "VAD Team PLZ 64",
+      "tel": "+49 30 10640 100",
+      "mail": "vad.plz64@firma.de"
+    },
+    {
+      "plz2": "64",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 64",
+      "tel": "+49 30 10641 101",
+      "mail": "kamlight.plz64@firma.de"
+    },
+    {
+      "plz2": "64",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 64",
+      "tel": "+49 30 10642 102",
+      "mail": "kamheavy.plz64@firma.de"
+    },
+    {
+      "plz2": "65",
+      "role": "VAD",
+      "name": "VAD Team PLZ 65",
+      "tel": "+49 30 10650 100",
+      "mail": "vad.plz65@firma.de"
+    },
+    {
+      "plz2": "65",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 65",
+      "tel": "+49 30 10651 101",
+      "mail": "kamlight.plz65@firma.de"
+    },
+    {
+      "plz2": "65",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 65",
+      "tel": "+49 30 10652 102",
+      "mail": "kamheavy.plz65@firma.de"
+    },
+    {
+      "plz2": "66",
+      "role": "VAD",
+      "name": "VAD Team PLZ 66",
+      "tel": "+49 30 10660 100",
+      "mail": "vad.plz66@firma.de"
+    },
+    {
+      "plz2": "66",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 66",
+      "tel": "+49 30 10661 101",
+      "mail": "kamlight.plz66@firma.de"
+    },
+    {
+      "plz2": "66",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 66",
+      "tel": "+49 30 10662 102",
+      "mail": "kamheavy.plz66@firma.de"
+    },
+    {
+      "plz2": "67",
+      "role": "VAD",
+      "name": "VAD Team PLZ 67",
+      "tel": "+49 30 10670 100",
+      "mail": "vad.plz67@firma.de"
+    },
+    {
+      "plz2": "67",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 67",
+      "tel": "+49 30 10671 101",
+      "mail": "kamlight.plz67@firma.de"
+    },
+    {
+      "plz2": "67",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 67",
+      "tel": "+49 30 10672 102",
+      "mail": "kamheavy.plz67@firma.de"
+    },
+    {
+      "plz2": "68",
+      "role": "VAD",
+      "name": "VAD Team PLZ 68",
+      "tel": "+49 30 10680 100",
+      "mail": "vad.plz68@firma.de"
+    },
+    {
+      "plz2": "68",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 68",
+      "tel": "+49 30 10681 101",
+      "mail": "kamlight.plz68@firma.de"
+    },
+    {
+      "plz2": "68",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 68",
+      "tel": "+49 30 10682 102",
+      "mail": "kamheavy.plz68@firma.de"
+    },
+    {
+      "plz2": "69",
+      "role": "VAD",
+      "name": "VAD Team PLZ 69",
+      "tel": "+49 30 10690 100",
+      "mail": "vad.plz69@firma.de"
+    },
+    {
+      "plz2": "69",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 69",
+      "tel": "+49 30 10691 101",
+      "mail": "kamlight.plz69@firma.de"
+    },
+    {
+      "plz2": "69",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 69",
+      "tel": "+49 30 10692 102",
+      "mail": "kamheavy.plz69@firma.de"
+    },
+    {
+      "plz2": "70",
+      "role": "VAD",
+      "name": "VAD Team PLZ 70",
+      "tel": "+49 30 10700 100",
+      "mail": "vad.plz70@firma.de"
+    },
+    {
+      "plz2": "70",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 70",
+      "tel": "+49 30 10701 101",
+      "mail": "kamlight.plz70@firma.de"
+    },
+    {
+      "plz2": "70",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 70",
+      "tel": "+49 30 10702 102",
+      "mail": "kamheavy.plz70@firma.de"
+    },
+    {
+      "plz2": "71",
+      "role": "VAD",
+      "name": "VAD Team PLZ 71",
+      "tel": "+49 30 10710 100",
+      "mail": "vad.plz71@firma.de"
+    },
+    {
+      "plz2": "71",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 71",
+      "tel": "+49 30 10711 101",
+      "mail": "kamlight.plz71@firma.de"
+    },
+    {
+      "plz2": "71",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 71",
+      "tel": "+49 30 10712 102",
+      "mail": "kamheavy.plz71@firma.de"
+    },
+    {
+      "plz2": "72",
+      "role": "VAD",
+      "name": "VAD Team PLZ 72",
+      "tel": "+49 30 10720 100",
+      "mail": "vad.plz72@firma.de"
+    },
+    {
+      "plz2": "72",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 72",
+      "tel": "+49 30 10721 101",
+      "mail": "kamlight.plz72@firma.de"
+    },
+    {
+      "plz2": "72",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 72",
+      "tel": "+49 30 10722 102",
+      "mail": "kamheavy.plz72@firma.de"
+    },
+    {
+      "plz2": "73",
+      "role": "VAD",
+      "name": "VAD Team PLZ 73",
+      "tel": "+49 30 10730 100",
+      "mail": "vad.plz73@firma.de"
+    },
+    {
+      "plz2": "73",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 73",
+      "tel": "+49 30 10731 101",
+      "mail": "kamlight.plz73@firma.de"
+    },
+    {
+      "plz2": "73",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 73",
+      "tel": "+49 30 10732 102",
+      "mail": "kamheavy.plz73@firma.de"
+    },
+    {
+      "plz2": "74",
+      "role": "VAD",
+      "name": "VAD Team PLZ 74",
+      "tel": "+49 30 10740 100",
+      "mail": "vad.plz74@firma.de"
+    },
+    {
+      "plz2": "74",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 74",
+      "tel": "+49 30 10741 101",
+      "mail": "kamlight.plz74@firma.de"
+    },
+    {
+      "plz2": "74",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 74",
+      "tel": "+49 30 10742 102",
+      "mail": "kamheavy.plz74@firma.de"
+    },
+    {
+      "plz2": "75",
+      "role": "VAD",
+      "name": "VAD Team PLZ 75",
+      "tel": "+49 30 10750 100",
+      "mail": "vad.plz75@firma.de"
+    },
+    {
+      "plz2": "75",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 75",
+      "tel": "+49 30 10751 101",
+      "mail": "kamlight.plz75@firma.de"
+    },
+    {
+      "plz2": "75",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 75",
+      "tel": "+49 30 10752 102",
+      "mail": "kamheavy.plz75@firma.de"
+    },
+    {
+      "plz2": "76",
+      "role": "VAD",
+      "name": "VAD Team PLZ 76",
+      "tel": "+49 30 10760 100",
+      "mail": "vad.plz76@firma.de"
+    },
+    {
+      "plz2": "76",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 76",
+      "tel": "+49 30 10761 101",
+      "mail": "kamlight.plz76@firma.de"
+    },
+    {
+      "plz2": "76",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 76",
+      "tel": "+49 30 10762 102",
+      "mail": "kamheavy.plz76@firma.de"
+    },
+    {
+      "plz2": "77",
+      "role": "VAD",
+      "name": "VAD Team PLZ 77",
+      "tel": "+49 30 10770 100",
+      "mail": "vad.plz77@firma.de"
+    },
+    {
+      "plz2": "77",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 77",
+      "tel": "+49 30 10771 101",
+      "mail": "kamlight.plz77@firma.de"
+    },
+    {
+      "plz2": "77",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 77",
+      "tel": "+49 30 10772 102",
+      "mail": "kamheavy.plz77@firma.de"
+    },
+    {
+      "plz2": "78",
+      "role": "VAD",
+      "name": "VAD Team PLZ 78",
+      "tel": "+49 30 10780 100",
+      "mail": "vad.plz78@firma.de"
+    },
+    {
+      "plz2": "78",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 78",
+      "tel": "+49 30 10781 101",
+      "mail": "kamlight.plz78@firma.de"
+    },
+    {
+      "plz2": "78",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 78",
+      "tel": "+49 30 10782 102",
+      "mail": "kamheavy.plz78@firma.de"
+    },
+    {
+      "plz2": "79",
+      "role": "VAD",
+      "name": "VAD Team PLZ 79",
+      "tel": "+49 30 10790 100",
+      "mail": "vad.plz79@firma.de"
+    },
+    {
+      "plz2": "79",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 79",
+      "tel": "+49 30 10791 101",
+      "mail": "kamlight.plz79@firma.de"
+    },
+    {
+      "plz2": "79",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 79",
+      "tel": "+49 30 10792 102",
+      "mail": "kamheavy.plz79@firma.de"
+    },
+    {
+      "plz2": "80",
+      "role": "VAD",
+      "name": "VAD Team PLZ 80",
+      "tel": "+49 30 10800 100",
+      "mail": "vad.plz80@firma.de"
+    },
+    {
+      "plz2": "80",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 80",
+      "tel": "+49 30 10801 101",
+      "mail": "kamlight.plz80@firma.de"
+    },
+    {
+      "plz2": "80",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 80",
+      "tel": "+49 30 10802 102",
+      "mail": "kamheavy.plz80@firma.de"
+    },
+    {
+      "plz2": "81",
+      "role": "VAD",
+      "name": "VAD Team PLZ 81",
+      "tel": "+49 30 10810 100",
+      "mail": "vad.plz81@firma.de"
+    },
+    {
+      "plz2": "81",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 81",
+      "tel": "+49 30 10811 101",
+      "mail": "kamlight.plz81@firma.de"
+    },
+    {
+      "plz2": "81",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 81",
+      "tel": "+49 30 10812 102",
+      "mail": "kamheavy.plz81@firma.de"
+    },
+    {
+      "plz2": "82",
+      "role": "VAD",
+      "name": "VAD Team PLZ 82",
+      "tel": "+49 30 10820 100",
+      "mail": "vad.plz82@firma.de"
+    },
+    {
+      "plz2": "82",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 82",
+      "tel": "+49 30 10821 101",
+      "mail": "kamlight.plz82@firma.de"
+    },
+    {
+      "plz2": "82",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 82",
+      "tel": "+49 30 10822 102",
+      "mail": "kamheavy.plz82@firma.de"
+    },
+    {
+      "plz2": "83",
+      "role": "VAD",
+      "name": "VAD Team PLZ 83",
+      "tel": "+49 30 10830 100",
+      "mail": "vad.plz83@firma.de"
+    },
+    {
+      "plz2": "83",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 83",
+      "tel": "+49 30 10831 101",
+      "mail": "kamlight.plz83@firma.de"
+    },
+    {
+      "plz2": "83",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 83",
+      "tel": "+49 30 10832 102",
+      "mail": "kamheavy.plz83@firma.de"
+    },
+    {
+      "plz2": "84",
+      "role": "VAD",
+      "name": "VAD Team PLZ 84",
+      "tel": "+49 30 10840 100",
+      "mail": "vad.plz84@firma.de"
+    },
+    {
+      "plz2": "84",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 84",
+      "tel": "+49 30 10841 101",
+      "mail": "kamlight.plz84@firma.de"
+    },
+    {
+      "plz2": "84",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 84",
+      "tel": "+49 30 10842 102",
+      "mail": "kamheavy.plz84@firma.de"
+    },
+    {
+      "plz2": "85",
+      "role": "VAD",
+      "name": "VAD Team PLZ 85",
+      "tel": "+49 30 10850 100",
+      "mail": "vad.plz85@firma.de"
+    },
+    {
+      "plz2": "85",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 85",
+      "tel": "+49 30 10851 101",
+      "mail": "kamlight.plz85@firma.de"
+    },
+    {
+      "plz2": "85",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 85",
+      "tel": "+49 30 10852 102",
+      "mail": "kamheavy.plz85@firma.de"
+    },
+    {
+      "plz2": "86",
+      "role": "VAD",
+      "name": "VAD Team PLZ 86",
+      "tel": "+49 30 10860 100",
+      "mail": "vad.plz86@firma.de"
+    },
+    {
+      "plz2": "86",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 86",
+      "tel": "+49 30 10861 101",
+      "mail": "kamlight.plz86@firma.de"
+    },
+    {
+      "plz2": "86",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 86",
+      "tel": "+49 30 10862 102",
+      "mail": "kamheavy.plz86@firma.de"
+    },
+    {
+      "plz2": "87",
+      "role": "VAD",
+      "name": "VAD Team PLZ 87",
+      "tel": "+49 30 10870 100",
+      "mail": "vad.plz87@firma.de"
+    },
+    {
+      "plz2": "87",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 87",
+      "tel": "+49 30 10871 101",
+      "mail": "kamlight.plz87@firma.de"
+    },
+    {
+      "plz2": "87",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 87",
+      "tel": "+49 30 10872 102",
+      "mail": "kamheavy.plz87@firma.de"
+    },
+    {
+      "plz2": "88",
+      "role": "VAD",
+      "name": "VAD Team PLZ 88",
+      "tel": "+49 30 10880 100",
+      "mail": "vad.plz88@firma.de"
+    },
+    {
+      "plz2": "88",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 88",
+      "tel": "+49 30 10881 101",
+      "mail": "kamlight.plz88@firma.de"
+    },
+    {
+      "plz2": "88",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 88",
+      "tel": "+49 30 10882 102",
+      "mail": "kamheavy.plz88@firma.de"
+    },
+    {
+      "plz2": "89",
+      "role": "VAD",
+      "name": "VAD Team PLZ 89",
+      "tel": "+49 30 10890 100",
+      "mail": "vad.plz89@firma.de"
+    },
+    {
+      "plz2": "89",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 89",
+      "tel": "+49 30 10891 101",
+      "mail": "kamlight.plz89@firma.de"
+    },
+    {
+      "plz2": "89",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 89",
+      "tel": "+49 30 10892 102",
+      "mail": "kamheavy.plz89@firma.de"
+    },
+    {
+      "plz2": "90",
+      "role": "VAD",
+      "name": "VAD Team PLZ 90",
+      "tel": "+49 30 10900 100",
+      "mail": "vad.plz90@firma.de"
+    },
+    {
+      "plz2": "90",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 90",
+      "tel": "+49 30 10901 101",
+      "mail": "kamlight.plz90@firma.de"
+    },
+    {
+      "plz2": "90",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 90",
+      "tel": "+49 30 10902 102",
+      "mail": "kamheavy.plz90@firma.de"
+    },
+    {
+      "plz2": "91",
+      "role": "VAD",
+      "name": "VAD Team PLZ 91",
+      "tel": "+49 30 10910 100",
+      "mail": "vad.plz91@firma.de"
+    },
+    {
+      "plz2": "91",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 91",
+      "tel": "+49 30 10911 101",
+      "mail": "kamlight.plz91@firma.de"
+    },
+    {
+      "plz2": "91",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 91",
+      "tel": "+49 30 10912 102",
+      "mail": "kamheavy.plz91@firma.de"
+    },
+    {
+      "plz2": "92",
+      "role": "VAD",
+      "name": "VAD Team PLZ 92",
+      "tel": "+49 30 10920 100",
+      "mail": "vad.plz92@firma.de"
+    },
+    {
+      "plz2": "92",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 92",
+      "tel": "+49 30 10921 101",
+      "mail": "kamlight.plz92@firma.de"
+    },
+    {
+      "plz2": "92",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 92",
+      "tel": "+49 30 10922 102",
+      "mail": "kamheavy.plz92@firma.de"
+    },
+    {
+      "plz2": "93",
+      "role": "VAD",
+      "name": "VAD Team PLZ 93",
+      "tel": "+49 30 10930 100",
+      "mail": "vad.plz93@firma.de"
+    },
+    {
+      "plz2": "93",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 93",
+      "tel": "+49 30 10931 101",
+      "mail": "kamlight.plz93@firma.de"
+    },
+    {
+      "plz2": "93",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 93",
+      "tel": "+49 30 10932 102",
+      "mail": "kamheavy.plz93@firma.de"
+    },
+    {
+      "plz2": "94",
+      "role": "VAD",
+      "name": "VAD Team PLZ 94",
+      "tel": "+49 30 10940 100",
+      "mail": "vad.plz94@firma.de"
+    },
+    {
+      "plz2": "94",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 94",
+      "tel": "+49 30 10941 101",
+      "mail": "kamlight.plz94@firma.de"
+    },
+    {
+      "plz2": "94",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 94",
+      "tel": "+49 30 10942 102",
+      "mail": "kamheavy.plz94@firma.de"
+    },
+    {
+      "plz2": "95",
+      "role": "VAD",
+      "name": "VAD Team PLZ 95",
+      "tel": "+49 30 10950 100",
+      "mail": "vad.plz95@firma.de"
+    },
+    {
+      "plz2": "95",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 95",
+      "tel": "+49 30 10951 101",
+      "mail": "kamlight.plz95@firma.de"
+    },
+    {
+      "plz2": "95",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 95",
+      "tel": "+49 30 10952 102",
+      "mail": "kamheavy.plz95@firma.de"
+    },
+    {
+      "plz2": "96",
+      "role": "VAD",
+      "name": "VAD Team PLZ 96",
+      "tel": "+49 30 10960 100",
+      "mail": "vad.plz96@firma.de"
+    },
+    {
+      "plz2": "96",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 96",
+      "tel": "+49 30 10961 101",
+      "mail": "kamlight.plz96@firma.de"
+    },
+    {
+      "plz2": "96",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 96",
+      "tel": "+49 30 10962 102",
+      "mail": "kamheavy.plz96@firma.de"
+    },
+    {
+      "plz2": "97",
+      "role": "VAD",
+      "name": "VAD Team PLZ 97",
+      "tel": "+49 30 10970 100",
+      "mail": "vad.plz97@firma.de"
+    },
+    {
+      "plz2": "97",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 97",
+      "tel": "+49 30 10971 101",
+      "mail": "kamlight.plz97@firma.de"
+    },
+    {
+      "plz2": "97",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 97",
+      "tel": "+49 30 10972 102",
+      "mail": "kamheavy.plz97@firma.de"
+    },
+    {
+      "plz2": "98",
+      "role": "VAD",
+      "name": "VAD Team PLZ 98",
+      "tel": "+49 30 10980 100",
+      "mail": "vad.plz98@firma.de"
+    },
+    {
+      "plz2": "98",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 98",
+      "tel": "+49 30 10981 101",
+      "mail": "kamlight.plz98@firma.de"
+    },
+    {
+      "plz2": "98",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 98",
+      "tel": "+49 30 10982 102",
+      "mail": "kamheavy.plz98@firma.de"
+    },
+    {
+      "plz2": "99",
+      "role": "VAD",
+      "name": "VAD Team PLZ 99",
+      "tel": "+49 30 10990 100",
+      "mail": "vad.plz99@firma.de"
+    },
+    {
+      "plz2": "99",
+      "role": "KAMLIGHT",
+      "name": "KAMLIGHT Team PLZ 99",
+      "tel": "+49 30 10991 101",
+      "mail": "kamlight.plz99@firma.de"
+    },
+    {
+      "plz2": "99",
+      "role": "KAMHEAVY",
+      "name": "KAMHEAVY Team PLZ 99",
+      "tel": "+49 30 10992 102",
+      "mail": "kamheavy.plz99@firma.de"
     }
   ]
 }
